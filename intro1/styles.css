@@ -1,0 +1,21 @@
+div {
+    height: 95vh;
+    background-color: cadetblue;
+    align-content: center;
+}
+
+.covidBubble {
+    background-color: #C9CBA3;
+    height: 10vh;
+}
+.tbBubble {
+    background-color: #E26D5C;
+    height: 10vh;
+}
+/* COLOR PALETTE:
+C9CBA3 : green
+FFE1A8 : yellow
+E26D5C : coral
+723D46 : burgundy
+472D30 : brown
+*/
