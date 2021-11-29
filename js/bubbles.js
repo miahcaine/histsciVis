@@ -92,8 +92,9 @@ class Bubbles {
         //   vis.selectedDemographic = vis.raceCodeObj[vis.raceCode];
         //   vis.selectedBorough = vis.boroughObj[vis.boroughCode];
         // let deathCount;
-        vis.color = "#C9CBA3";
+        
         if (vis.is_covid) {
+            vis.color = "#C9CBA3";
             // TODO: get the correct columns
             // if (changed){
             //   stopCount = vis.stopData[vis.raceCode][vis.selectedBorough];
@@ -127,6 +128,7 @@ class Bubbles {
             //     }
             console.log("IS COVID");
         } else {
+            vis.color = "#E26D5C";
             // TODO: when showing both bubble vis, change vis color to the coral color
             // TODO: get correct columns from TB DATA
             console.log("IS TB");

@@ -1,12 +1,10 @@
 let covidData;
-let parent = "covidBubble";
-
 loadData();
 let parseDate = d3.timeParse("%Y-%m-%d");
 function loadData() {
     // todo: load in TB data
 
-    d3.csv("./data/WHO-COVID-19-global-data.csv").then(function (csv) {
+    d3.csv("../data/WHO-COVID-19-global-data.csv").then(function (csv) {
 
         csv.forEach(function (d) {
             // Convert string to 'date object'
@@ -36,6 +34,6 @@ function updateVisualization() {
     filteredData = covidData.filter((d) => {
         return d.Date_reported >= yearMax;
     });
-    let covidBubbles = new Bubbles(parent, filteredData, true)
+    let covidBubbles = new Bubbles("covidBubble", filteredData, true)
 
 }
