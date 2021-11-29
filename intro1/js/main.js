@@ -2,7 +2,6 @@ let covidData;
 let parent = "covidBubble";
 
 loadData();
-// console.log(d3.csv("./data/WHO-COVID-19-global-data.csv"))
 let parseDate = d3.timeParse("%Y-%m-%d");
 function loadData() {
     // todo: load in TB data
@@ -31,15 +30,12 @@ function loadData() {
 // Render visualization
 function updateVisualization() {
     // todo:
-    // filter / aggregate total deaths over all countries
-    // draw circles with radius of the people in millions in each country
 
     let filteredData;
     yearMax = d3.max(covidData, d => d.Date_reported);
     filteredData = covidData.filter((d) => {
         return d.Date_reported >= yearMax;
     });
-    console.log(filteredData);
     let covidBubbles = new Bubbles(parent, filteredData, true)
 
 }

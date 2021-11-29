@@ -41,8 +41,11 @@ class Bubbles {
             counted: false,
             x: vis.xCenter,
             y: vis.yCenter,
-            r: Math.max(d.Cumulative_deaths / 100000, 3) // todo: fix scale of the radius
+            r: Math.max(d.Cumulative_deaths / 15000, 4), // todo: fix scale of the radius
+            country: d.Country,
+            deaths: d.Cumulative_deaths
         }));
+        // console.log(vis.data);
 
         //   // react to clicking filtering buttons
         //   if (changed) {
@@ -169,20 +172,24 @@ class Bubbles {
         let vis = this;
         var svg = vis.svg; 
         var data = vis.nodes;
-        
 
         var simulation = d3.forceSimulation(data)
             .force("charge", d3.forceManyBody().strength([-20]))
             .force("x", d3.forceX().strength([0.15]).x(vis.xCenter))
             .force("y", d3.forceY().strength([0.15]).y(vis.yCenter))
-            .force("collision", d3.forceCollide().radius(d => d.radius + 50)); // todo: fix the radius of the
+            .force("collision", d3.forceCollide().radius(d => d.r + 10)); 
 
         var node = svg.selectAll(".circles")
             .data(data)
             .enter()
             .append("circle")
             .attr("r", d => d.r)
-            .attr("fill", vis.color);
+            .attr("fill", vis.color)
+            // TODO: (stretch) add tool tip
+            .on("mouseover", function(event, d){
+               console.log(d.country);
+            });
+            // .on("mouseout", tTip.hide);
 
         simulation.nodes(data)
             .on("tick", d => {
