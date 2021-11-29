@@ -1,17 +1,13 @@
 div {
     height: 95vh;
-    background-color: cadetblue;
     align-content: center;
 }
 
-.covidBubble {
-    background-color: #C9CBA3;
-    height: 10vh;
-}
-.tbBubble {
+/* #covidBubble { */
+/* .tbBubble {
     background-color: #E26D5C;
     height: 10vh;
-}
+} */
 /* COLOR PALETTE:
 C9CBA3 : green
 FFE1A8 : yellow
