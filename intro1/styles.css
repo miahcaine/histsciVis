@@ -1,6 +1,20 @@
 div {
     height: 95vh;
-    align-content: center;
+    /* align-content: center; */
+    
+}
+
+#covidBubble {
+    width: 48vw;
+    background-color: #FFE1A8;
+    float: left;
+    align-content: flex-end;
+}
+#tbBubble {
+    width: 48vw;
+    background-color: #E26D5C;
+    float: right;
+    align-content: flex-start;
 }
 
 /* COLOR PALETTE:
